@@ -35,7 +35,7 @@ namespace KYSyringe
 
         public override SpawnProperties SpawnProperties { get; set; } = new SpawnProperties()
         {
-            Limit = 6,
+            Limit = 1,
             DynamicSpawnPoints = new List<DynamicSpawnPoint>
             {
                 new DynamicSpawnPoint()
@@ -52,7 +52,6 @@ namespace KYSyringe
             base.SubscribeEvents();
         }
 
-        /// <inheritdoc/>
         protected override void UnsubscribeEvents()
         {
             Player.UsedItem -= OnUsedLJ;
@@ -68,14 +67,11 @@ namespace KYSyringe
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Corroding, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Poisoned, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Bleeding, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.AmnesiaVision, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Asphyxiated, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Decontaminating, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Disabled, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.CardiacArrest, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Hypothermia, 500f);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Hemorrhage, 500f);
-                //Don't ask,
+                //Don't ask, Just don't ask
             }
 
 

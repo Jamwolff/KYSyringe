@@ -19,7 +19,7 @@ namespace KYSyringe
         public override string Name { get; } = "LJ-429 Re-Addition";
         public override string Author { get; } = "Jamwolff, with a lot of help and 'borrowed' code from Snivy (Thanks Again BTW)";
         public override string Prefix { get; } = "JI";
-        public override Version Version { get; } = new Version(1, 0, 6);
+        public override Version Version { get; } = new Version(1, 0, 7);
         public override Version RequiredExiledVersion { get; } = new Version(8, 11, 0);
 
         public override void OnEnabled()
