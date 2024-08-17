@@ -9,6 +9,7 @@ using PluginAPI.Events;
 using YamlDotNet.Core;
 using Version = System.Version;
 using Exiled.CustomItems;
+using System.Collections.Generic;
 
 namespace KYSyringe
 
@@ -18,8 +19,8 @@ namespace KYSyringe
         public static Plugin Instance;
         public override string Name { get; } = "LJ-429 Re-Addition";
         public override string Author { get; } = "Jamwolff, with a lot of help and 'borrowed' code from Snivy (Thanks Again BTW)";
-        public override string Prefix { get; } = "JI";
-        public override Version Version { get; } = new Version(1, 0, 7);
+        public override string Prefix { get; } = "LJ";
+        public override Version Version { get; } = new Version(1, 2, 0);
         public override Version RequiredExiledVersion { get; } = new Version(8, 11, 0);
 
         public override void OnEnabled()
@@ -35,4 +36,10 @@ namespace KYSyringe
             Instance = null;
             base.OnDisabled();
         }
+
+  
+        
+        
+        
+     
     } }

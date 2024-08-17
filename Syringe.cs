@@ -22,6 +22,8 @@ using Exiled.API.Interfaces;
 using Exiled.API.Structs;
 using Exiled.API.Extensions;
 using CustomPlayerEffects;
+using Exiled.CustomRoles.API.Features.Enums;
+using PlayerRoles;
 
 namespace KYSyringe
 {
@@ -47,34 +49,27 @@ namespace KYSyringe
         };
         protected override void SubscribeEvents()
         {
-            Player.UsedItem += OnUsedLJ;
+            Player.UsingItem += OnUsingLJ;
 
             base.SubscribeEvents();
         }
 
         protected override void UnsubscribeEvents()
         {
-            Player.UsedItem -= OnUsedLJ;
+            Player.UsingItem -= OnUsingLJ;
 
             base.UnsubscribeEvents();
         }
-        public void OnUsedLJ(UsedItemEventArgs ev)
+        private void OnUsingLJ(UsingItemEventArgs ev)
         {
-            if (Check(ev.Player.CurrentItem))
+            if (!Check(ev.Player.CurrentItem))
                 return;
-            {
-                ev.Player.Health = 1;
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Corroding, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Poisoned, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Bleeding, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Asphyxiated, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Decontaminating, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.CardiacArrest, 500f);
-                ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Hemorrhage, 500f);
-                //Don't ask, Just don't ask
-            }
 
-
+            ev.Player.Health = 1f;
+            ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Poisoned, 500f);
+            ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Bleeding, 500f);
+            ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Corroding, 500f);
         }
+
     }
 }
