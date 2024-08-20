@@ -1,7 +1,8 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Exiled.API.Interfaces;
 
-namespace KYSyringe.Configs
+namespace KYSyringe
 {
     public class Config : IConfig
     {
@@ -10,6 +11,13 @@ namespace KYSyringe.Configs
 
         [Description("Debug Printouts")]
         public bool Debug { get; set; } = false;
+
+        [Description("List of LJ-429s.")]
+        public List<Syringe> Syringes { get; private set; } = new()
+        {
+            new Syringe(),
+        };
+         
 
     }
 }

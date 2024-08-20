@@ -14,7 +14,7 @@ using System.Collections.Generic;
 namespace KYSyringe
 
 {
-    public class Plugin : Plugin<Config>
+    public class Plugin : Plugin<KYSyringe.Config>
     {
         public static Plugin Instance;
         public override string Name { get; } = "LJ-429 Re-Addition";
