@@ -66,7 +66,6 @@ namespace KYSyringe
                 return;
 
             ev.Player.Health = 1f;
-            ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Poisoned, 500f);
             ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Bleeding, 500f);
             ev.Player.EnableEffect(Exiled.API.Enums.EffectType.Corroding, 500f);
         }
